@@ -1,7 +1,11 @@
-import Image from "next/image";
+import { BannerMain } from "@/components/banner-main/banner-main";
+import { HeaderMain } from "@/components/header/header";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24"></main>
+    <>
+      <HeaderMain />
+      <BannerMain />
+    </>
   );
 }
