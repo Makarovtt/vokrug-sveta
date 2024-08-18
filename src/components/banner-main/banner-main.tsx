@@ -8,7 +8,7 @@ export function BannerMain() {
             bg-[url('/images/banner/banner-bg.jpg')] bg-center"
     >
       <BannerDescription />
-      <BannerForm />
+      {/* <BannerForm /> */}
     </section>
   );
 }

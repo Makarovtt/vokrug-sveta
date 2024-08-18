@@ -1,9 +1,13 @@
 const { fontFamily } = require("tailwindcss/defaultTheme");
+const { nextui } = require("@nextui-org/react");
 import type { Config } from "tailwindcss";
 
 const config = {
   darkMode: ["class"],
-  content: ["./src/**/*.{ts,tsx}"],
+  content: [
+    "./src/**/*.{ts,tsx}",
+    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
+  ],
   prefix: "",
   theme: {
     container: {
@@ -16,7 +20,8 @@ const config = {
     },
     extend: {
       fontFamily: {
-        sans: ["var(--font-sans)", ...fontFamily.sans],
+        // sans: ["var(--font-sans)", ...fontFamily.sans],
+        myfont: ["Advent Pro", "sans-serif", fontFamily.sans],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -25,7 +30,8 @@ const config = {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "hsl(var(--primary))",
+          // DEFAULT: "hsl(var(--primary))",
+          DEFAULT: "#0F5B8E",
           foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {
@@ -53,6 +59,9 @@ const config = {
           foreground: "hsl(var(--card-foreground))",
         },
       },
+      border: {
+        myborder: "1px solid #75B8E3",
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
@@ -72,9 +81,12 @@ const config = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      spacing: {
+        maxw: "1700px",
+      },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), nextui()],
 } satisfies Config;
 
 export default config;

@@ -7,7 +7,7 @@ export function HeaderSecond() {
   return (
     <section className="bg-[#C3E8FF]">
       <div
-        className="w-full max-w-[1700px] mx-auto
+        className="w-full max-w-maxw mx-auto px-10
                         flex justify-between items-center"
       >
         <div>

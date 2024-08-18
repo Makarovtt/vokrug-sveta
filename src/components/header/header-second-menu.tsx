@@ -1,11 +1,13 @@
+import { Button } from "@nextui-org/react";
+
 export function HeaderSecondMenu() {
   return (
-    <div className="flex justify-start items-center gap-6 text-base">
-      <div>О нас</div>
-      <div>Туристам</div>
-      <div>Страхование ВЗР</div>
-      <div>Оплата</div>
-      <div>Контакты</div>
+    <div className="flex justify-start items-center gap-1 text-base">
+      <Button variant="light">О нас</Button>
+      <Button variant="light">Туристам</Button>
+      <Button variant="light">Страхование ВЗР</Button>
+      <Button variant="light">Оплата</Button>
+      <Button variant="light">Контакты</Button>
     </div>
   );
 }

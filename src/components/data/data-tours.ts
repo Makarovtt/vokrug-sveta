@@ -1,0 +1,51 @@
+export const dataTours = [
+  {
+    id: 1,
+    picture: "/images/tours/5406504-1024x683.jpg",
+    title: "Грозный - Дагестан",
+    date: "30 мая",
+    night: 3,
+    price: 12000,
+  },
+  {
+    id: 2,
+    picture: "/images/tours/bez-nazvanija.jpg",
+    title: "Грозный - Дагестан",
+    date: "30 мая",
+    night: 3,
+    price: 12000,
+  },
+  {
+    id: 3,
+    picture: "/images/tours/1525050220_07-dantovo-uschele-1024x683.jpg",
+    title: "Грозный - Дагестан",
+    date: "30 мая",
+    night: 3,
+    price: 12000,
+  },
+  {
+    id: 4,
+    picture:
+      "/images/tours/a6dcbd0d57da48b5b2f348c7b49ca542.max-1200x800-1.jpg",
+    title: "Грозный - Дагестан",
+    date: "30 мая",
+    night: 3,
+    price: 12000,
+  },
+  {
+    id: 5,
+    picture: "/images/tours/scale_1200-1-1024x768.jpg",
+    title: "Грозный - Дагестан",
+    date: "30 мая",
+    night: 3,
+    price: 12000,
+  },
+  {
+    id: 6,
+    picture: "/images/tours/bez-nazvanija.jpg",
+    title: "Грозный - Дагестан",
+    date: "30 мая",
+    night: 3,
+    price: 12000,
+  },
+];

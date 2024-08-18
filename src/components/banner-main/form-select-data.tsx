@@ -22,7 +22,7 @@ export function SelectFormData({
     from: new Date(2023, 2, 22),
     to: addDays(new Date(2023, 2, 22), 20),
   });
-  var options = {
+  var options: Intl.DateTimeFormatOptions = {
     year: "numeric",
     month: "numeric",
     day: "numeric",
@@ -36,7 +36,7 @@ export function SelectFormData({
             id="date"
             variant={"outline"}
             className={cn(
-              "w-[285px] flex-wrap h-[56px] justify-start text-left font-normal py-1",
+              "w-[400px] flex-wrap h-[56px] justify-start text-left font-normal py-1",
               !date && "text-muted-foreground",
             )}
           >

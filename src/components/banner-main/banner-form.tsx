@@ -5,7 +5,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Bus, Clock, MapPin, PersonStanding } from "lucide-react";
+import { Bus, Clock, MapPin, PersonStanding, Users } from "lucide-react";
 import { SelectFormData } from "./form-select-data";
 import { Button } from "../ui/button";
 
@@ -14,7 +14,7 @@ export function BannerForm() {
     <div className="flex justify-between items-center max-w-[1800px] mx-auto mt-auto mb-8 gap-8">
       <div>
         <Select>
-          <SelectTrigger className="w-[285px] flex-wrap h-[56px] py-1 px-3 text-base font-semibold">
+          <SelectTrigger className="w-[200px] flex-wrap h-[56px] py-1 px-3 text-base font-semibold">
             <div className="flex justify-start items-center gap-2 text-gray-400 w-full text-xs font-light">
               <Bus strokeWidth={1} className="h-4" />
               Отправление
@@ -31,7 +31,7 @@ export function BannerForm() {
 
       <div>
         <Select>
-          <SelectTrigger className="w-[285px] flex-wrap h-[56px] py-1 px-3 text-base font-semibold">
+          <SelectTrigger className="w-[200px] flex-wrap h-[56px] py-1 px-3 text-base font-semibold">
             <div className="flex justify-start items-center gap-2 text-gray-400 w-full text-xs font-light">
               <MapPin strokeWidth={1} className="h-4" />
               Курорт
@@ -52,7 +52,7 @@ export function BannerForm() {
 
       <div>
         <Select>
-          <SelectTrigger className="w-[285px] flex-wrap h-[56px] py-1 px-3 text-base font-semibold">
+          <SelectTrigger className="w-[200px] flex-wrap h-[56px] py-1 px-3 text-base font-semibold">
             <div className="flex justify-start items-center gap-2 text-gray-400 w-full text-xs font-light">
               <Clock strokeWidth={1} className="h-4" />
               Кол-во ночей
@@ -75,9 +75,9 @@ export function BannerForm() {
 
       <div>
         <Select>
-          <SelectTrigger className="w-[285px] flex-wrap h-[56px] py-1 px-3 text-base font-semibold">
+          <SelectTrigger className="w-[200px] flex-wrap h-[56px] py-1 px-3 text-base font-semibold">
             <div className="flex justify-start items-center gap-2 text-gray-400 w-full text-xs font-light">
-              <PersonStanding strokeWidth={1} className="h-4" />
+              <Users strokeWidth={1} className="h-4" />
               Туристы
             </div>
             <SelectValue placeholder="Выбрать" />
@@ -98,7 +98,7 @@ export function BannerForm() {
 
       <div>
         <Button
-          className="w-[285px] flex justify-center items-center h-[56px] py-1 px-3 text-base font-semibold
+          className="w-[200px] flex justify-center items-center h-[56px] py-1 px-3 text-base font-semibold
         border border-white bg-[#0F5B8E] hover:bg-[#0D4870] transition-all"
         >
           Найти туры
