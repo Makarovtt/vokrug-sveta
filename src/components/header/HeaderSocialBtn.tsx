@@ -14,7 +14,7 @@ const HeaderSocialBtn: FC = () => {
         as={Link}
         variant="light"
         href="#"
-        className="w-2 h-4"
+        className="w-2 h-4 min-w-5"
       >
         <Image src={iconWhatsapp} alt="" className="object-contain h-full" />
       </Button>
@@ -24,7 +24,7 @@ const HeaderSocialBtn: FC = () => {
         as={Link}
         variant="light"
         href="#"
-        className="w-2 h-4 !px-0"
+        className="w-2 h-4 min-w-5"
       >
         <Image src={iconTelegram} alt="" className="object-contain h-full" />
       </Button>

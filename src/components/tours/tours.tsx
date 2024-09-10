@@ -5,7 +5,7 @@ import { Button } from "@nextui-org/react";
 
 export function Tours() {
   return (
-    <section className="w-full max-w-maxw mx-auto my-3 px-10">
+    <section className="w-full max-w-maxw mx-auto my-3 mt-14 px-10">
       <Zagolovok title="Туры из Астрахани" />
       <div className="flex justify-center my-10 gap-4 flex-wrap">
         {dataTours &&

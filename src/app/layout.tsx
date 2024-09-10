@@ -3,9 +3,9 @@ import "./globals.css";
 
 import { cn } from "@/lib/utils";
 import { NextUIProvider } from "@nextui-org/react";
-import { HeaderSecond } from "@/components/header/header-second";
-import { HeaderFirst } from "@/components/header/header-first";
-import { FooterMain } from "@/components/footer/footer-main";
+import { HeaderSecond } from "@/components/header/header-second/HeaderSecond";
+import { HeaderFirst } from "@/components/header/header-first/HeaderFirst";
+import { FooterMain } from "@/components/footer/FooterMain";
 
 export const metadata: Metadata = {
   title: "Туристическое агентство в Астрахани «Вокруг Света»",

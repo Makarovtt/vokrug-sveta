@@ -24,20 +24,20 @@ export const ChoiceCountries = () => {
           classNames={{
             base: "max-w-[600px]",
             trigger: [
-              "py-3 bg-white data-[hover=true]:!border-sky-400",
+              "py-1 bg-white data-[hover=true]:!border-sky-400",
               "!border-slate-300 data-[hover=true]:!bg-white shadow-lg",
             ],
-            label: "!text-gray-200 text-sm",
+            label: "!text-gray-200 text-xs",
             value: [
               "text-gray-400 text-base group-data-[has-value=true]:text-gray-700",
-              "group-data-[has-value=true]:text-lg px-4",
+              "group-data-[has-value=true]:text-xs px-4",
             ],
           }}
           renderValue={(items) => {
             return (
               <div className="flex flex-wrap gap-2">
                 {items.map((item) => (
-                  <Chip key={item.key} className="bg-sky-100">
+                  <Chip key={item.key} className="bg-sky-100 text-xs">
                     {item?.data?.name}
                   </Chip>
                 ))}
@@ -51,6 +51,7 @@ export const ChoiceCountries = () => {
                 <Avatar
                   alt={user.name}
                   className="flex-shrink-0"
+                  classNames={{}}
                   size="sm"
                   src={user.avatar}
                 />

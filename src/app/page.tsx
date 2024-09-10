@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <>
       <BannerMain />
-      <div className="w-full max-w-maxw mx-auto my-3 px-8">
+      <div className="w-full max-w-maxw mx-auto my-5 px-8">
         <Zagolovok title="Туры по России" className="mt-6 ml-3" />
         <RussianSearchElement />
       </div>

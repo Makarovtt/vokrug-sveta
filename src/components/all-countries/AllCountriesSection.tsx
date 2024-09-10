@@ -10,10 +10,6 @@ export const AllCountriesSection = () => {
         Компания «Вокруг света» предлагает туры по всему миру.
       </p>
 
-      <p className="text-center my-4 text-gray-600 font-semibold">
-        Оставьте заявку и мы подберем для вас наилучшее предложение.
-      </p>
-
       <CheckForm />
     </section>
   );

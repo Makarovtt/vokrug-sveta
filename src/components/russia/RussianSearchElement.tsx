@@ -10,7 +10,7 @@ export const RussianSearchElement = () => {
   }, []);
 
   return (
-    <div className="w-full py-14 flex items-center justify-center">
+    <div className="w-full flex items-center justify-center">
       {isLoading ? (
         <>
           <Script

@@ -143,22 +143,22 @@ export const dataMenuTop = [
     href: "#",
   },
   {
-    id: 1,
+    id: 2,
     title: "Туристам",
     href: "#",
   },
   {
-    id: 1,
+    id: 3,
     title: "Страхование ВЗР",
     href: "#",
   },
   {
-    id: 1,
+    id: 4,
     title: "Оплата",
     href: "#",
   },
   {
-    id: 1,
+    id: 5,
     title: "Контакты",
     href: "#",
   },
