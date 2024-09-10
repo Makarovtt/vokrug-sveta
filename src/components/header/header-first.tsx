@@ -3,26 +3,32 @@
 import Link from "next/link";
 import Logo from "@/public/images/logotype.svg";
 import Image from "next/image";
-import iconWhatsapp from "@/public/images/icons/whatsapp.svg";
-import iconTelegram from "@/public/images/icons/telegram.svg";
 import { ChevronDown } from "lucide-react";
 import { Button } from "@nextui-org/react";
 import { cn } from "@/lib/utils";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { dataMenu } from "../data/data-menu";
 import { IMenuSecondMenu, IMenuSecondSubMenu } from "./header.interface";
 
 export function HeaderFirst() {
   const pathname = usePathname();
+  const router = useRouter();
+
+  function goToHref(href: any) {
+    // const pathname = href;
+    // window.location.pathname(pathname);
+    // console.log(href);
+    window.location.replace(href);
+  }
   return (
     <div className="border-b border-b-slate-300 shadow-md">
-      <div className="w-full max-w-maxw mx-auto flex justify-between items-center px-10 h-[110px]">
-        <div className="py-4">
+      <div className="w-full max-w-maxw mx-auto flex justify-between items-center px-10 h-[60px]">
+        <div className="py-4 max-w-[180px]">
           <Link href="/">
             <Image src={Logo} alt="Логотип" />
           </Link>
         </div>
-        <div className="flex justify-end items-center text-xl gap-7 h-full">
+        <div className="flex justify-end items-center text-xl gap-4 h-full">
           {dataMenu &&
             dataMenu?.map((itemMenu: IMenuSecondMenu | undefined) => {
               return (
@@ -39,9 +45,10 @@ export function HeaderFirst() {
                   <Button
                     variant="light"
                     color="primary"
-                    as={Link}
-                    href={itemMenu?.href}
-                    className="text-xl"
+                    // as={Link}
+                    // href={itemMenu?.href}
+                    onClick={() => goToHref(itemMenu?.href)}
+                    className="text-base"
                   >
                     {itemMenu?.title}
                     {itemMenu?.sub?.length ? (
@@ -79,28 +86,6 @@ group-hover:block"
                 </div>
               );
             })}
-        </div>
-        <div className="flex items-center gap-3 py-4">
-          <Button
-            radius="none"
-            isIconOnly
-            as={Link}
-            variant="light"
-            href="#"
-            className="w-10 h-10"
-          >
-            <Image src={iconWhatsapp} alt="" />
-          </Button>
-          <Button
-            radius="none"
-            isIconOnly
-            as={Link}
-            variant="light"
-            href="#"
-            className="w-10 h-10"
-          >
-            <Image src={iconTelegram} alt="" />
-          </Button>
         </div>
       </div>
     </div>

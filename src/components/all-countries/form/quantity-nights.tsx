@@ -32,7 +32,7 @@ export const QuantityNights = () => {
         <span> — </span>
         <Select
           className="max-w-[100px]"
-          defaultSelectedKeys={["7"]}
+          defaultSelectedKeys={["10"]}
           aria-label="Options"
           classNames={{
             trigger: [
@@ -45,14 +45,14 @@ export const QuantityNights = () => {
             ],
           }}
         >
-          <SelectItem key={3}>3</SelectItem>
-          <SelectItem key={4}>4</SelectItem>
           <SelectItem key={5}>5</SelectItem>
-          <SelectItem key={6}>6</SelectItem>
+          <SelectItem key={5}>6</SelectItem>
           <SelectItem key={7}>7</SelectItem>
           <SelectItem key={8}>8</SelectItem>
           <SelectItem key={9}>9</SelectItem>
           <SelectItem key={10}>10</SelectItem>
+          <SelectItem key={11}>11</SelectItem>
+          <SelectItem key={12}>12</SelectItem>
         </Select>
       </div>
     </>

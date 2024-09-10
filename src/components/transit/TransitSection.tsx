@@ -3,6 +3,7 @@ import { TRANSIT } from "../data/data-transit";
 import { ITransit } from "./transit.interface";
 import {
   BadgeRussianRuble,
+  Bus,
   CalendarCheck2,
   ChevronRight,
   Clock,
@@ -68,11 +69,7 @@ export const TransitSection = () => {
                           {index === 0 ? (
                             <>
                               <b className="text-base flex items-center gap-2 text-gray-700 font-semibold">
-                                <PlaneTakeoff
-                                  size={20}
-                                  className="text-gray-400"
-                                />{" "}
-                                {i}
+                                <Bus size={20} className="text-gray-400" /> {i}
                               </b>
                               {item.route.length <= 2 ? (
                                 <span className="block ml-7 font-bold text-lg mb-2">
@@ -81,11 +78,7 @@ export const TransitSection = () => {
                               ) : null}
                             </>
                           ) : index === item.route.length - 1 ? (
-                            <b className="text-base flex items-center gap-2">
-                              <PlaneLanding
-                                size={20}
-                                className="text-gray-400"
-                              />
+                            <b className="text-base items-center gap-2 ml-7 inline-block">
                               {i}
                             </b>
                           ) : (

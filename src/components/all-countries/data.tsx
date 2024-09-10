@@ -95,4 +95,9 @@ export const users = [
     name: "Таджикистан",
     avatar: "/images/flags/tajikistan.svg",
   },
+  {
+    id: 19,
+    name: "Другое",
+    avatar: "",
+  },
 ];

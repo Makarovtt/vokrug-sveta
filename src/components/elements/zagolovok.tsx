@@ -9,11 +9,11 @@ export function Zagolovok({
   return (
     <h1
       className={cn(
-        "flex justify-start items-start gap-4 text-[#0F5B8E] text-4xl font-bold mb-10",
+        "flex justify-start items-start gap-4 text-[#0F5B8E] text-2xl font-bold mb-10",
         className,
       )}
     >
-      <Image src={ImgMarkerZagolovok} alt="" />
+      <Image src={ImgMarkerZagolovok} alt="" className="w-10" />
       <span className="hover:underline cursor-pointer">{title}</span>
     </h1>
   );

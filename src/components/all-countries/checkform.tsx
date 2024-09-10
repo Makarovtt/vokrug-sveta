@@ -6,6 +6,8 @@ import { QuantityNights } from "./form/quantity-nights";
 import { ChoiceCountries } from "./form/countries-choice";
 import { CityDeparture } from "./form/city-departure";
 import { DatesDeparture } from "./form/dates-departure";
+import { NameUser } from "./form/name-user";
+import { SubmitBtn } from "./form/submit-btn";
 
 export const CheckForm = () => {
   const [humansQuantity, setHumanQuantity] = useState<IHumans>({
@@ -63,6 +65,8 @@ export const CheckForm = () => {
       />
       <hr className="mt-10" />
       <TabsDeliverySend />
+      <NameUser />
+      <SubmitBtn />
     </div>
   );
 };

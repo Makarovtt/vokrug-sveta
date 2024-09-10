@@ -18,7 +18,6 @@ export const QuantityHumans = ({
   humansQuantity,
   changeHumanQuantity,
 }: IProps) => {
-  console.log(2);
   return (
     <>
       <p className="mt-10 text-gray-600 font-semibold">Количетсво человек</p>

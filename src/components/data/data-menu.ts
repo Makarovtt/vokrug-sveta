@@ -67,7 +67,7 @@ export const dataMenu = [
   {
     id: 3,
     title: "ТУРЫ ИЗ АСТРАХАНИ",
-    href: "/astrakhan",
+    href: "/authortours",
     sub: [
       // {
       //   id: 31,
@@ -133,5 +133,33 @@ export const dataMenu = [
     title: "КРУИЗЫ",
     href: "/cruises",
     sub: [],
+  },
+];
+
+export const dataMenuTop = [
+  {
+    id: 1,
+    title: "О нас",
+    href: "#",
+  },
+  {
+    id: 1,
+    title: "Туристам",
+    href: "#",
+  },
+  {
+    id: 1,
+    title: "Страхование ВЗР",
+    href: "#",
+  },
+  {
+    id: 1,
+    title: "Оплата",
+    href: "#",
+  },
+  {
+    id: 1,
+    title: "Контакты",
+    href: "#",
   },
 ];

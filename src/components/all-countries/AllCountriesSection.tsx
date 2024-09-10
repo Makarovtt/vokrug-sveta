@@ -1,7 +1,6 @@
 "use client";
 import { Zagolovok } from "../elements/zagolovok";
 import { CheckForm } from "./checkform";
-import { Form } from "./Form";
 
 export const AllCountriesSection = () => {
   return (

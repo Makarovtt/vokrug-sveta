@@ -5,36 +5,15 @@ import { Whatsapp } from "@/components/ui/icon-whatsapp";
 import InputMask from "react-input-mask";
 import { Card, CardBody, Input, Tab, Tabs } from "@nextui-org/react";
 import { MailIcon } from "lucide-react";
-import { ReactNode, useState } from "react";
+import React, { ReactNode, useState } from "react";
 
 export const TabsDeliverySend = () => {
-  const Input = (props: any) => (
-    <InputMask mask="99/99/9999" value={props.value} onChange={props.onChange}>
-      {(inputProps: any) => (
-        <MaterialInput
-          {...inputProps}
-          type="tel"
-          disableUnderline
-          onChange={props.onChange}
-        />
-      )}
-    </InputMask>
-  );
   const [valuePhone, setValuePhone] = useState<string>("");
-  function onFocus(args: any) {
-    if (valuePhone === "") setValuePhone("+7(___) ___ __-__");
-  }
-  function onFocusFalse() {
-    if (valuePhone === "+7(___) ___ __-__") setValuePhone("");
-  }
-  function onChange(e: any) {
-    setValuePhone(e.target.value);
-  }
   return (
     <>
-      <div className="mt-10">
+      <div className="mt-10 text-gray-600 font-semibold">
         <p>Выберите способ как Вы хотите получить наше предложение</p>
-        <div className="flex w-full flex-col mt-3">
+        <div className="flex w-full flex-col mt-3 font-normal">
           <Tabs
             aria-label="Options"
             classNames={{
@@ -56,24 +35,30 @@ export const TabsDeliverySend = () => {
             >
               <Card>
                 <CardBody>
-                  {/* <Input
-                    key="phone"
-                    radius="lg"
-                    type="text"
-                    placeholder="Номер"
-                    className="max-w-[220px]"
-                    startContent={
-                      <div className="pointer-events-none flex items-center">
-                        <span className="text-default-400 text-base">+7</span>
-                      </div>
-                    }
-                  /> */}
                   <InputMask
-                    mask="+7 (999) 999 99-99"
-                    placeholder="номер телефона"
-                    // value={value}
-                    // onChange={onChange}
-                  />
+                    mask="(999) 999 99-99"
+                    value={valuePhone}
+                    onChange={(e) => setValuePhone(e.target.value)}
+                  >
+                    <Input
+                      key="phone"
+                      radius="lg"
+                      type="text"
+                      placeholder="(___) ___ __-__"
+                      classNames={{
+                        inputWrapper: [
+                          "py-3 px-4 h-auto w-auto min-w-[310px] max-w-[310px] border-2 border-slate-300",
+                          "shadow-lg bg-white hover:!bg-white hover:!border-sky-400",
+                        ],
+                        input: "text-lg text-gray-700",
+                      }}
+                      startContent={
+                        <div className="pointer-events-none flex items-center">
+                          <span className="text-default-400 text-lg">+7</span>
+                        </div>
+                      }
+                    />
+                  </InputMask>
                 </CardBody>
               </Card>
             </Tab>
@@ -88,37 +73,30 @@ export const TabsDeliverySend = () => {
             >
               <Card>
                 <CardBody>
-                  {/* <InputMask
-                    mask="+7 (999) 999 99-99"
-                    placeholder="номер телефона"
-                    // value={value}
-                    // onChange={onChange}
-                  /> */}
-                  <Input
-                    key="whatsapp"
-                    radius="lg"
-                    type="text"
-                    placeholder="Номер"
-                    className="max-w-[220px]"
-                    value={valuePhone}
-                    onFocus={onFocus}
-                    onBlur={onFocusFalse}
-                    onChange={onChange}
-                    startContent={
-                      <div className="pointer-events-none flex items-center">
-                        <span className="text-default-400 text-base">+7</span>
-                      </div>
-                    }
-                  />
-
                   <InputMask
-                    mask="99/99/9999"
+                    mask="(999) 999 99-99"
                     value={valuePhone}
-                    onChange={onFocus}
+                    onChange={(e) => setValuePhone(e.target.value)}
                   >
-                    {(inputProps: any) => <Input {...inputProps} />}
+                    <Input
+                      key="whatsapp"
+                      radius="lg"
+                      type="text"
+                      placeholder="(___) ___ __-__"
+                      classNames={{
+                        inputWrapper: [
+                          "py-3 px-4 h-auto w-auto min-w-[310px] max-w-[310px] border-2 border-slate-300",
+                          "shadow-lg bg-white hover:!bg-white hover:!border-sky-400",
+                        ],
+                        input: "text-lg text-gray-700",
+                      }}
+                      startContent={
+                        <div className="pointer-events-none flex items-center">
+                          <span className="text-default-400 text-lg">+7</span>
+                        </div>
+                      }
+                    />
                   </InputMask>
-                  {/* </InputMask> */}
                 </CardBody>
               </Card>
             </Tab>
@@ -138,7 +116,13 @@ export const TabsDeliverySend = () => {
                     radius="lg"
                     type="text"
                     placeholder="Ник в телеграме"
-                    className="max-w-[220px]"
+                    classNames={{
+                      inputWrapper: [
+                        "py-3 px-4 h-auto w-auto min-w-[310px] max-w-[310px] border-2 border-slate-300",
+                        "shadow-lg bg-white hover:!bg-white hover:!border-sky-400",
+                      ],
+                      input: "text-lg text-gray-700",
+                    }}
                     startContent={
                       <div className="pointer-events-none flex items-center">
                         <span className="text-default-400 text-lg">@</span>
@@ -164,7 +148,13 @@ export const TabsDeliverySend = () => {
                     radius="lg"
                     type="email"
                     placeholder="Email"
-                    className="max-w-[220px]"
+                    classNames={{
+                      inputWrapper: [
+                        "py-3 px-4 h-auto w-auto min-w-[310px] max-w-[310px] border-2 border-slate-300",
+                        "shadow-lg bg-white hover:!bg-white hover:!border-sky-400",
+                      ],
+                      input: "text-lg text-gray-700",
+                    }}
                     startContent={
                       <MailIcon
                         size={20}

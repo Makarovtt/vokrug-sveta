@@ -2,12 +2,13 @@ import { HeaderSecondMenu } from "@/components/header/header-second-menu";
 import { Button } from "../ui/button";
 import { Phone, Search } from "lucide-react";
 import Link from "next/link";
+import HeaderSocialBtn from "./header-social-btn";
 
 export function HeaderSecond() {
   return (
     <section className="bg-[#C3E8FF]">
       <div
-        className="w-full max-w-maxw mx-auto px-10
+        className="w-full max-w-maxw mx-auto px-10 my-1
                         flex justify-between items-center"
       >
         <div>
@@ -15,8 +16,8 @@ export function HeaderSecond() {
         </div>
         <div className="flex justify-between items-center gap-5">
           <div>
-            <Button variant="ghost" className="text-[#787878]">
-              <Search className="mr-2" />
+            <Button variant="ghost" className="text-[#787878] h-auto p-1">
+              <Search className="mr-2" size={15} />
               Поиск
             </Button>
           </div>
@@ -24,11 +25,12 @@ export function HeaderSecond() {
             <Link
               href="tel:89618131646"
               className="flex justify-start items-center gap-2 text-[#00567E] font-semibold
-                        hover:opacity-90 transition"
+                        hover:opacity-90 transition text-sm"
             >
-              <Phone />8 (961) 813 16-46
+              <Phone size={15} />8 (961) 813 16-46
             </Link>
           </div>
+          <HeaderSocialBtn />
         </div>
       </div>
     </section>

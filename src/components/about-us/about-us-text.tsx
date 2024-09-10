@@ -2,7 +2,7 @@ import { Zagolovok } from "../elements/zagolovok";
 
 export function AboutUsText() {
   return (
-    <section className="w-full max-w-maxw mx-auto my-20 px-10">
+    <section className="w-full max-w-maxw mx-auto my-3 px-10">
       <Zagolovok title="Туры и экскурсии из Астрахани" />
       <p className="my-5">
         Туристическая компания «Вокруг Света» уже более 15 лет предлагает от

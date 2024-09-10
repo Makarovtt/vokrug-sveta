@@ -1,9 +1,9 @@
 import { Select, SelectItem } from "@nextui-org/select";
 import { animals } from "../data";
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 
 export const CityDeparture = () => {
-  const [values, setValues] = useState(new Set([]));
+  const [values, setValues] = useState<any>(new Set([]));
   return (
     <>
       <p className="mt-10 text-gray-600 font-semibold">Город вылета</p>
