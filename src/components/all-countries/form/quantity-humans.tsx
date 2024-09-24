@@ -34,8 +34,8 @@ export const QuantityHumans = ({
               color="secondary"
               variant="flat"
               className="capitalize bg-white text-gray-700 shadow-lg 
-                      border-2 border-slate-300 text-lg py-3 px-4 
-                      h-auto !max-w-full min-w-[320px] justify-start
+                      border-2 border-slate-300 text-lg py-2 
+                      h-auto !max-w-full min-w-[270px] w-full justify-start
                       hover:border-sky-400 transition"
             >
               {humansQuantity.humans >= 1 ? (

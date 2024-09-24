@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/select";
 import { Bus, Clock, MapPin, PersonStanding, Users } from "lucide-react";
 import { SelectFormData } from "./form-select-data";
-import { Button } from "../ui/button";
+import { Button } from "../ui/Button";
 
 export function BannerForm() {
   return (

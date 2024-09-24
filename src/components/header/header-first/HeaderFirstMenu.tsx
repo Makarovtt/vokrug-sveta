@@ -8,12 +8,12 @@ import HeaderMenuItem from "./HeaderMenuItem";
 
 export function HeaderFirstMenu() {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
-  const router = useRouter();
+  // const router = useRouter();
   return (
     <>
       <div className="1100:hidden flex justify-between gap-2">
         <Button
-          onPress={onOpen}
+          onClick={onOpen}
           endContent={isOpen ? <X size={18} /> : <Menu size={18} />}
           className="text-xs 500:text-sm h-auto py-2 w-auto min-w-10 px-2
                       500:px-4"

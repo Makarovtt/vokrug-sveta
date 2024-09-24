@@ -50,7 +50,7 @@ export const CheckForm = () => {
   return (
     <div
       className="bg-slate-50 border border-slate-200 shadow-xl
-                   rounded-lg max-w-[800px] mx-auto my-14 py-10  px-8"
+                   rounded-lg max-w-[800px] mx-auto my-14 py-10 px-2 500:px-8"
     >
       <div className="max-w-[800px] w-full mx-auto mb-8 text-3xl text-gray-500 font-semibold text-center">
         Оставьте заявку и мы подберем для вас наилучшее предложение.

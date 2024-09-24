@@ -6,7 +6,7 @@ export const RussianSection = () => {
   <div class="s-partnership" style="display:none;">najAUgXvCGn6EmpnQ%2FToCuo2OcTEYXHZhbndFrdjctk%3D</div>`;
 
   return (
-    <section className="w-full max-w-maxw mx-auto my-10 px-10">
+    <section className="w-full max-w-maxw mx-auto my-10 px-2 500:px-10">
       <Zagolovok title="Туры по России" className="mt-6 ml-3" />
       <RussianSearchElement />
     </section>

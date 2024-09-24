@@ -47,7 +47,7 @@ export const TabsDeliverySend = () => {
                       placeholder="(___) ___ __-__"
                       classNames={{
                         inputWrapper: [
-                          "py-3 px-4 h-auto w-auto min-w-[310px] max-w-[310px] border-2 border-slate-300",
+                          "py-3 px-4 h-auto w-auto min-w-[250px] w-full max-w-[450px] border-2 border-slate-300",
                           "shadow-lg bg-white hover:!bg-white hover:!border-sky-400",
                         ],
                         input: "text-lg text-gray-700",
@@ -85,7 +85,7 @@ export const TabsDeliverySend = () => {
                       placeholder="(___) ___ __-__"
                       classNames={{
                         inputWrapper: [
-                          "py-3 px-4 h-auto w-auto min-w-[310px] max-w-[310px] border-2 border-slate-300",
+                          "py-3 px-4 h-auto w-auto min-w-[250px] w-full max-w-[450px] border-2 border-slate-300",
                           "shadow-lg bg-white hover:!bg-white hover:!border-sky-400",
                         ],
                         input: "text-lg text-gray-700",
@@ -118,7 +118,7 @@ export const TabsDeliverySend = () => {
                     placeholder="Ник в телеграме"
                     classNames={{
                       inputWrapper: [
-                        "py-3 px-4 h-auto w-auto min-w-[310px] max-w-[310px] border-2 border-slate-300",
+                        "py-3 px-4 h-auto w-auto min-w-[250px] w-full max-w-[450px] border-2 border-slate-300",
                         "shadow-lg bg-white hover:!bg-white hover:!border-sky-400",
                       ],
                       input: "text-lg text-gray-700",
@@ -150,7 +150,7 @@ export const TabsDeliverySend = () => {
                     placeholder="Email"
                     classNames={{
                       inputWrapper: [
-                        "py-3 px-4 h-auto w-auto min-w-[310px] max-w-[310px] border-2 border-slate-300",
+                        "py-3 px-4 h-auto w-auto min-w-[250px] w-full max-w-[450px] border-2 border-slate-300",
                         "shadow-lg bg-white hover:!bg-white hover:!border-sky-400",
                       ],
                       input: "text-lg text-gray-700",

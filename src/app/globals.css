@@ -80,3 +80,12 @@
     @apply bg-background text-foreground;
   }
 }
+
+.personal-block p {
+  font-size: 13px;
+  margin: 10px 0;
+}
+.personal-block ul {
+  margin-left: 20px;
+  list-style: disc;
+}

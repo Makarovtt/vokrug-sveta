@@ -19,12 +19,11 @@ export const ChoiceCountries = () => {
           selectionMode="multiple"
           placeholder="Страна"
           labelPlacement="outside"
-          className="w-[500px]"
           selectorIcon={<Plus color="gray" />}
           classNames={{
-            base: "max-w-[600px]",
+            base: "max-w-[600px] !w-full",
             trigger: [
-              "py-1 bg-white data-[hover=true]:!border-sky-400",
+              "py-2 bg-white data-[hover=true]:!border-sky-400",
               "!border-slate-300 data-[hover=true]:!bg-white shadow-lg",
             ],
             label: "!text-gray-200 text-xs",

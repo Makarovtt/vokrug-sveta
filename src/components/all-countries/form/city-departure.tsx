@@ -23,7 +23,7 @@ export const CityDeparture = () => {
             ],
             value: [
               "text-gray-400 text-base font-normal group-data-[has-value=true]:text-gray-700",
-              "py-3 px-4 group-data-[has-value=true]:text-lg",
+              "py-2 px-4 group-data-[has-value=true]:text-lg",
             ],
           }}
         >

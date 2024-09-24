@@ -30,7 +30,7 @@ export const HeaderSecondMobile: FC<Iprops> = ({
                         color="primary"
                         as={Link}
                         href={item.href}
-                        className="text-sm"
+                        className="text-sm min-w-14"
                       >
                         {item.title}
                       </Button>

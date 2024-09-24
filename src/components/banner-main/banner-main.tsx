@@ -4,7 +4,7 @@ import { BannerForm } from "./banner-form";
 export function BannerMain() {
   return (
     <section
-      className="w-full mx-auto h-[505px] flex flex-col
+      className="w-full mx-auto h-[505px] flex shrink-0 flex-col
             bg-[url('/images/banner/banner-bg.jpg')] bg-center"
     >
       <BannerDescription />

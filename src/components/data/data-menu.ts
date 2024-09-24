@@ -140,26 +140,26 @@ export const dataMenuTop = [
   {
     id: 1,
     title: "О нас",
-    href: "#",
+    href: "/about-us",
   },
   {
     id: 2,
-    title: "Туристам",
-    href: "#",
+    title: "Сертификаты",
+    href: "/sertificates",
   },
   {
     id: 3,
     title: "Страхование ВЗР",
-    href: "#",
+    href: "/insurance-vzr",
   },
   {
     id: 4,
     title: "Оплата",
-    href: "#",
+    href: "/payment",
   },
   {
     id: 5,
     title: "Контакты",
-    href: "#",
+    href: "/contacts",
   },
 ];

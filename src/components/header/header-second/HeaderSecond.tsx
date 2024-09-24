@@ -26,7 +26,7 @@ export function HeaderSecond() {
         <div className="flex justify-between items-center gap-5">
           <div className="block 900:hidden">
             <Button
-              onPress={onOpen}
+              onClick={onOpen}
               isIconOnly
               className="bg-cyan-500 py-1 h-auto text-white"
             >

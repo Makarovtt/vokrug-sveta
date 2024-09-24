@@ -4,13 +4,14 @@ import Image from "next/image";
 import ImgCardMir from "@/public/images/footer/card-mir.svg";
 import ImgCardVisa from "@/public/images/footer/card-visa.svg";
 import ImgCardMastercard from "@/public/images/footer/card-mastercard.svg";
+import Link from "next/link";
 
 export function FooterMain() {
   return (
-    <section className="bg-[#00567E] pt-20 pb-32 mt-auto px-10">
+    <section className="bg-[#00567E] pt-14 pb-14 mt-auto px-2 500:px-10">
       <div
         className="w-full 900:max-w-maxw mx-auto max-w-[200px]
-                        flex justify-between items-start flex-col 
+                        flex shrink-0 justify-between items-start flex-col 
                         700:max-w-[400px] 900:flex-row gap-5"
       >
         <Image
@@ -20,9 +21,9 @@ export function FooterMain() {
         />
         <section className="flex flex-col gap-5">
           <div className="text-xs text-gray-300 font-light">
-            <span className="block">ИНН: 30183145557803</span>
+            <span className="block">ИНН: 3016037153</span>
             <span className="block">
-              Юр. адрес: 414000, г. Астрахань, ул. Дубровинского, 17
+              414000 г. Астрахань ул. Володарского 14А офис 41, 4 этаж
             </span>
           </div>
 
@@ -61,6 +62,14 @@ export function FooterMain() {
             <div className="flex justify-start items-center gap-2 text-xs">
               <Mail size={16} strokeWidth={1.5} />
               voktravel@mail.ru
+            </div>
+            <div className="flex justify-start items-center gap-2 text-xs">
+              <Link
+                href="/personal-data"
+                className="opacity-90 hover:opacity-100 hover:underline"
+              >
+                Песональные данные
+              </Link>
             </div>
           </div>
 
