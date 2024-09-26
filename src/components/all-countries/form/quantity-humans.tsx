@@ -23,33 +23,43 @@ export const QuantityHumans = ({
     (action: string) => {
       switch (action) {
         case "addHuman":
-          setHumanQuantity((prev) => {
-            return { ...prev, humans: prev.humans + 1 };
-          });
+          const newArr = {
+            ...humansQuantity,
+            humans: humansQuantity.humans + 1,
+          };
+          setHumanQuantity(newArr);
           break;
 
         case "delHuman":
-          if (humansQuantity.humans > 1)
-            setHumanQuantity((prev) => {
-              return { ...prev, humans: prev.humans - 1 };
-            });
+          if (humansQuantity.humans > 1) {
+            const newArr = {
+              ...humansQuantity,
+              humans: humansQuantity.humans - 1,
+            };
+            setHumanQuantity(newArr);
+          }
           break;
 
         case "addKid":
-          setHumanQuantity((prev) => {
-            return { ...prev, kids: prev.kids + 1 };
-          });
+          const newKid = {
+            ...humansQuantity,
+            kids: humansQuantity.kids + 1,
+          };
+          setHumanQuantity(newKid);
           break;
 
         case "delKid":
-          if (humansQuantity.kids > 0)
-            setHumanQuantity((prev) => {
-              return { ...prev, kids: prev.kids - 1 };
-            });
+          if (humansQuantity.kids > 0) {
+            const newKid = {
+              ...humansQuantity,
+              kids: humansQuantity.kids - 1,
+            };
+            setHumanQuantity(newKid);
+          }
           break;
       }
     },
-    [humansQuantity.humans, humansQuantity.kids, setHumanQuantity],
+    [humansQuantity, setHumanQuantity],
   );
 
   return (
