@@ -8,20 +8,59 @@ import {
 } from "@nextui-org/react";
 import { Minus, Plus } from "lucide-react";
 import { IHumans } from "../form.interface";
+import { useCallback } from "react";
 
 interface IProps {
   humansQuantity: IHumans;
-  changeHumanQuantity: (arg0: string) => void;
+  setHumanQuantity: (arg0: IHumans) => void;
 }
 
 export const QuantityHumans = ({
   humansQuantity,
-  changeHumanQuantity,
+  setHumanQuantity,
 }: IProps) => {
+  const changeHumanQuantity = useCallback(
+    (action: string) => {
+      switch (action) {
+        case "addHuman":
+          setHumanQuantity((prev) => {
+            return { ...prev, humans: prev.humans + 1 };
+          });
+          break;
+
+        case "delHuman":
+          if (humansQuantity.humans > 1)
+            setHumanQuantity((prev) => {
+              return { ...prev, humans: prev.humans - 1 };
+            });
+          break;
+
+        case "addKid":
+          setHumanQuantity((prev) => {
+            return { ...prev, kids: prev.kids + 1 };
+          });
+          break;
+
+        case "delKid":
+          if (humansQuantity.kids > 0)
+            setHumanQuantity((prev) => {
+              return { ...prev, kids: prev.kids - 1 };
+            });
+          break;
+      }
+    },
+    [humansQuantity.humans, humansQuantity.kids, setHumanQuantity],
+  );
+
   return (
-    <>
-      <p className="mt-10 text-gray-600 font-semibold">Количетсво человек</p>
-      <div className="mt-3">
+    <div
+      className="flex flex-col items-start justify-start gap-0 w-full
+                  600:flex-row 600:items-center 600:gap-5"
+    >
+      <div className="min-w-[200px] ml-2 600:ml-0">
+        <p className="text-gray-500 font-semibold">Количетсво человек</p>
+      </div>
+      <div className="flex w-full flex-col gap-2 grow">
         <Popover
           placement="bottom-start"
           aria-label="Options"
@@ -34,8 +73,8 @@ export const QuantityHumans = ({
               color="secondary"
               variant="flat"
               className="capitalize bg-white text-gray-700 shadow-lg 
-                      border-2 border-slate-300 text-lg py-2 
-                      h-auto !max-w-full min-w-[270px] w-full justify-start
+                      border-2 border-slate-300 text-base py-2 
+                      h-auto !max-w-[2000px] min-w-[270px] w-full justify-start
                       hover:border-sky-400 transition"
             >
               {humansQuantity.humans >= 1 ? (
@@ -110,6 +149,6 @@ export const QuantityHumans = ({
           </PopoverContent>
         </Popover>
       </div>
-    </>
+    </div>
   );
 };

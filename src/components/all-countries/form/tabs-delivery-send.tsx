@@ -5,17 +5,30 @@ import { Whatsapp } from "@/components/ui/icon-whatsapp";
 import InputMask from "react-input-mask";
 import { Card, CardBody, Input, Tab, Tabs } from "@nextui-org/react";
 import { MailIcon } from "lucide-react";
-import React, { ReactNode, useState } from "react";
+import React, { FC, memo } from "react";
+import { IUserContacts } from "../form.interface";
 
-export const TabsDeliverySend = () => {
-  const [valuePhone, setValuePhone] = useState<string>("");
+interface IProps {
+  valueContacts: IUserContacts;
+  setValueContacts: (arg0: IUserContacts) => void;
+  setContacts: (key: any) => void;
+}
+
+export const TabsDeliverySend: FC<IProps> = memo(function TabsDeliverySendMemo({
+  valueContacts,
+  setValueContacts,
+  setContacts,
+}) {
   return (
     <>
-      <div className="mt-10 text-gray-600 font-semibold">
-        <p>Выберите способ как Вы хотите получить наше предложение</p>
+      <div className="mt-4 text-gray-600 font-semibold">
+        <p className="text-gray-500">
+          Выберите способ как Вы хотите получить наше предложение *
+        </p>
         <div className="flex w-full flex-col mt-3 font-normal">
           <Tabs
             aria-label="Options"
+            onSelectionChange={setContacts}
             classNames={{
               tabContent: "grayscale group-data-[selected=true]:grayscale-0",
             }}
@@ -37,8 +50,13 @@ export const TabsDeliverySend = () => {
                 <CardBody>
                   <InputMask
                     mask="(999) 999 99-99"
-                    value={valuePhone}
-                    onChange={(e) => setValuePhone(e.target.value)}
+                    value={valueContacts.phone}
+                    onChange={(e) =>
+                      setValueContacts({
+                        ...valueContacts,
+                        phone: e.target.value,
+                      })
+                    }
                   >
                     <Input
                       key="phone"
@@ -47,14 +65,14 @@ export const TabsDeliverySend = () => {
                       placeholder="(___) ___ __-__"
                       classNames={{
                         inputWrapper: [
-                          "py-3 px-4 h-auto w-auto min-w-[250px] w-full max-w-[450px] border-2 border-slate-300",
+                          "py-2 px-4 h-auto w-auto min-w-[250px] w-full max-w-[450px] border-2 border-slate-300",
                           "shadow-lg bg-white hover:!bg-white hover:!border-sky-400",
                         ],
-                        input: "text-lg text-gray-700",
+                        input: "text-base text-gray-700",
                       }}
                       startContent={
                         <div className="pointer-events-none flex items-center">
-                          <span className="text-default-400 text-lg">+7</span>
+                          <span className="text-default-400 text-base">+7</span>
                         </div>
                       }
                     />
@@ -75,8 +93,13 @@ export const TabsDeliverySend = () => {
                 <CardBody>
                   <InputMask
                     mask="(999) 999 99-99"
-                    value={valuePhone}
-                    onChange={(e) => setValuePhone(e.target.value)}
+                    value={valueContacts.whatsap}
+                    onChange={(e) =>
+                      setValueContacts({
+                        ...valueContacts,
+                        whatsap: e.target.value,
+                      })
+                    }
                   >
                     <Input
                       key="whatsapp"
@@ -85,14 +108,14 @@ export const TabsDeliverySend = () => {
                       placeholder="(___) ___ __-__"
                       classNames={{
                         inputWrapper: [
-                          "py-3 px-4 h-auto w-auto min-w-[250px] w-full max-w-[450px] border-2 border-slate-300",
+                          "py-2 px-4 h-auto w-auto min-w-[250px] w-full max-w-[450px] border-2 border-slate-300",
                           "shadow-lg bg-white hover:!bg-white hover:!border-sky-400",
                         ],
-                        input: "text-lg text-gray-700",
+                        input: "text-base text-gray-700",
                       }}
                       startContent={
                         <div className="pointer-events-none flex items-center">
-                          <span className="text-default-400 text-lg">+7</span>
+                          <span className="text-default-400 text-base">+7</span>
                         </div>
                       }
                     />
@@ -115,17 +138,24 @@ export const TabsDeliverySend = () => {
                     key="telegram"
                     radius="lg"
                     type="text"
+                    value={valueContacts.telegram}
                     placeholder="Ник в телеграме"
+                    onChange={(e) =>
+                      setValueContacts({
+                        ...valueContacts,
+                        telegram: e.target.value,
+                      })
+                    }
                     classNames={{
                       inputWrapper: [
-                        "py-3 px-4 h-auto w-auto min-w-[250px] w-full max-w-[450px] border-2 border-slate-300",
+                        "py-2 px-4 h-auto w-auto min-w-[250px] w-full max-w-[450px] border-2 border-slate-300",
                         "shadow-lg bg-white hover:!bg-white hover:!border-sky-400",
                       ],
-                      input: "text-lg text-gray-700",
+                      input: "text-base text-gray-700",
                     }}
                     startContent={
                       <div className="pointer-events-none flex items-center">
-                        <span className="text-default-400 text-lg">@</span>
+                        <span className="text-default-400 text-base">@</span>
                       </div>
                     }
                   />
@@ -147,13 +177,21 @@ export const TabsDeliverySend = () => {
                     key="email"
                     radius="lg"
                     type="email"
+                    value={valueContacts.email}
                     placeholder="Email"
+                    onChange={(e) =>
+                      setValueContacts({
+                        ...valueContacts,
+                        email: e.target.value,
+                      })
+                    }
                     classNames={{
+                      mainWrapper: "bg-none",
                       inputWrapper: [
-                        "py-3 px-4 h-auto w-auto min-w-[250px] w-full max-w-[450px] border-2 border-slate-300",
+                        "py-2 px-4 h-auto w-auto min-w-[250px] w-full max-w-[450px] border-2 border-slate-300",
                         "shadow-lg bg-white hover:!bg-white hover:!border-sky-400",
                       ],
-                      input: "text-lg text-gray-700",
+                      input: "text-base text-gray-700",
                     }}
                     startContent={
                       <MailIcon
@@ -167,7 +205,15 @@ export const TabsDeliverySend = () => {
             </Tab>
           </Tabs>
         </div>
+        {valueContacts.email ||
+        valueContacts.phone ||
+        valueContacts.telegram ||
+        valueContacts.whatsap ? null : (
+          <span className="text-xs text-red-500 font-light">
+            Должен быть заполнен хотябы один вариант
+          </span>
+        )}
       </div>
     </>
   );
-};
+});

@@ -2,15 +2,39 @@ import { Avatar, Chip } from "@nextui-org/react";
 import { Select, SelectItem } from "@nextui-org/select";
 import { Plus } from "lucide-react";
 import { users } from "../data";
+import { FC, useCallback, useState } from "react";
 
-export const ChoiceCountries = () => {
+interface IProps {
+  setCountries: (arg0: string) => void;
+}
+
+export const ChoiceCountries: FC<IProps> = ({ setCountries }) => {
+  const funcSetCountries = useCallback(
+    (numCountries: string) => {
+      const newArr = numCountries.split(",");
+      const findCountriesObj = users.filter((item) =>
+        newArr.includes(String(item.id)),
+      );
+      const findCountriesObjNames = findCountriesObj
+        .map((i) => i.name)
+        .join(",");
+      setCountries(findCountriesObjNames);
+    },
+    [setCountries],
+  );
+
   return (
-    <>
-      <p className="mt-10 text-gray-600 font-semibold">Добавьте страну</p>
-      <span className="block text-xs text-gray-500">
-        Можно выбрать несколько
-      </span>
-      <div className="flex w-full max-w-xs flex-col gap-2 mt-3">
+    <div
+      className="flex flex-col items-start justify-start gap-0 w-full
+                    600:flex-row 600:items-center 600:gap-5"
+    >
+      <div className="min-w-[200px] ml-2 600:ml-0">
+        <p className="text-gray-500 font-semibold">Добавьте страну</p>
+        <span className="block text-xs text-gray-500">
+          Можно выбрать несколько
+        </span>
+      </div>
+      <div className="flex w-full flex-col gap-2 grow">
         <Select
           items={users}
           variant="bordered"
@@ -19,9 +43,10 @@ export const ChoiceCountries = () => {
           selectionMode="multiple"
           placeholder="Страна"
           labelPlacement="outside"
+          onChange={(items) => funcSetCountries(items.target.value)}
           selectorIcon={<Plus color="gray" />}
           classNames={{
-            base: "max-w-[600px] !w-full",
+            base: "!w-full",
             trigger: [
               "py-2 bg-white data-[hover=true]:!border-sky-400",
               "!border-slate-300 data-[hover=true]:!bg-white shadow-lg",
@@ -45,7 +70,11 @@ export const ChoiceCountries = () => {
           }}
         >
           {(user) => (
-            <SelectItem key={user.id} textValue={user.name}>
+            <SelectItem
+              key={user.id}
+              textValue={user.name}
+              // onClick={() => setCountries((prev) => [...prev, user.name])}
+            >
               <div className="flex gap-2 items-center">
                 <Avatar
                   alt={user.name}
@@ -62,6 +91,6 @@ export const ChoiceCountries = () => {
           )}
         </Select>
       </div>
-    </>
+    </div>
   );
 };
