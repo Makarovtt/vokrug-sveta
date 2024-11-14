@@ -1,11 +1,15 @@
 import Image from "next/image";
 import ImgMarkerZagolovok from "@/public/images/marker-zagolovok.svg";
 import { cn } from "@/lib/utils";
+import { FC } from "react";
 
-export function Zagolovok({
-  title,
-  className,
-}: React.HTMLAttributes<HTMLDivElement>) {
+interface Iprops {
+  title: string;
+  className: string;
+  tour?: boolean;
+}
+
+export const Zagolovok: FC<Iprops> = ({ title, className, tour = false }) => {
   return (
     <h1
       className={cn(
@@ -14,7 +18,8 @@ export function Zagolovok({
       )}
     >
       <Image src={ImgMarkerZagolovok} alt="" className="w-10" />
+      {tour && <span className="text-default-500 text-2xl">Тур: </span>}
       <span className="hover:underline cursor-pointer">{title}</span>
     </h1>
   );
-}
+};

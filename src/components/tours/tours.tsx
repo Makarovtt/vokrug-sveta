@@ -1,6 +1,6 @@
 import { Zagolovok } from "../elements/zagolovok";
 import { dataTours } from "../data/data-tours";
-import { TourItem } from "./tour-item";
+import { TourItem } from "../authortours/tour-item";
 import { Button } from "@nextui-org/react";
 
 export function Tours() {
