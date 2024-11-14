@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/select";
 import { Bus, Clock, MapPin, PersonStanding, Users } from "lucide-react";
 import { SelectFormData } from "./form-select-data";
-import { Button } from "../ui/Button";
+// import { Button } from "../ui/Button";
 
 export function BannerForm() {
   return (
@@ -96,14 +96,14 @@ export function BannerForm() {
         </Select>
       </div>
 
-      <div>
+      {/* <div>
         <Button
           className="w-[200px] flex justify-center items-center h-[56px] py-1 px-3 text-base font-semibold
         border border-white bg-[#0F5B8E] hover:bg-[#0D4870] transition-all"
         >
           Найти туры
         </Button>
-      </div>
+      </div> */}
     </div>
   );
 }
