@@ -1,9 +1,27 @@
+"use client";
+
 import { TRANSIT } from "../data/data-transit";
 import { ITransit } from "./transit.interface";
 import { Zagolovok } from "../elements/zagolovok";
 import { TransitSectionItem } from "./TransitSectionItem";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { API_URL } from "@/config/api.config";
+import { IGetTransit, ITrans } from "@/types/transit.interface";
+import { Loader } from "../ui/Loader";
+
+const url = `${API_URL}/get_transit.php`;
 
 export const TransitSection = () => {
+  const [dataTransit, setDataTransit] = useState<ITrans[]>([]);
+  useEffect(() => {
+    axios
+      .get<IGetTransit>(url)
+      .then((response) => {
+        setDataTransit(response.data.transit);
+      })
+      .catch((error) => console.log(error));
+  }, []);
   return (
     <section className="w-full max-w-maxw mx-auto my-10 px-2 500:px-10">
       <Zagolovok
@@ -25,14 +43,27 @@ export const TransitSection = () => {
             </tr>
           </thead>
           <tbody className="pt-2 text-xs 500:text-sm 1100:text-base">
-            {TRANSIT &&
+            {/* {TRANSIT &&
               TRANSIT.map((item: ITransit) => {
                 let del = true;
                 if (item.id % 2 === 0) del = false;
                 return (
                   <TransitSectionItem key={item.id} item={item} del={del} />
                 );
-              })}
+              })} */}
+            {dataTransit.length ? (
+              <>
+                {dataTransit.map((item: ITrans) => {
+                  let del = true;
+                  if (Number(item.id) % 2 === 0) del = false;
+                  return (
+                    <TransitSectionItem key={item.id} item={item} del={del} />
+                  );
+                })}
+              </>
+            ) : (
+              <Loader />
+            )}
           </tbody>
         </table>
       </div>

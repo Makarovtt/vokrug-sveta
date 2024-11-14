@@ -1,21 +1,16 @@
 import { cn } from "@/lib/utils";
-import {
-  BadgeRussianRuble,
-  Bus,
-  CalendarCheck2,
-  ChevronRight,
-  Clock,
-} from "lucide-react";
-import { ITransit } from "./transit.interface";
+import { BadgeRussianRuble, CalendarCheck2, Clock } from "lucide-react";
 import { TransitSectionItemItem } from "./TransitSectionItemItem";
+import { ITrans } from "@/types/transit.interface";
+import { FC } from "react";
 
-export const TransitSectionItem = ({
-  item,
-  del,
-}: {
-  item: ITransit;
+interface Iprops {
+  item: ITrans;
   del: boolean;
-}) => {
+}
+
+export const TransitSectionItem: FC<Iprops> = ({ item, del }) => {
+  const newRoute = item.route?.split("|");
   return (
     <tr
       key={item.id}
@@ -28,34 +23,35 @@ export const TransitSectionItem = ({
       <td className="flex items-start gap-2">
         <CalendarCheck2 className="mt-2 text-gray-400 w-4 500:w-5" />
         <div>
-          {item.departure?.map((item, index) => {
+          {item.departure?.split("|").map((item) => {
             return (
-              <div key={index} className="!m-0 !p-0">
-                {item}
+              <div key={item} className="!m-0 !p-0">
+                {item.trim()}
               </div>
             );
           })}
         </div>
       </td>
       <td>
-        {item.route?.map((i, index) => {
+        {newRoute.map((i, index) => {
           return (
             <TransitSectionItemItem
-              key={index}
-              i={i}
+              key={i}
+              i={i.trim()}
               index={index}
               item={item}
             />
           );
         })}
+        {/* {item.route} */}
       </td>
       <td className="flex items-start gap-2">
-        <BadgeRussianRuble className="mt-2 text-gray-400 w-4 500:w-5" />
+        <BadgeRussianRuble className="mt-2 text-gray-400 w-4 500:w-8" />
         <div>
-          {item.price?.map((item, index) => {
+          {item.price?.split("|").map((item, index) => {
             return (
               <div key={index} className="!m-0 !p-0">
-                {item}
+                {item.trim()}
               </div>
             );
           })}
@@ -64,10 +60,10 @@ export const TransitSectionItem = ({
       <td className="flex items-start gap-2">
         <Clock className="mt-2 text-gray-400 w-4 500:w-5" />
         <div>
-          {item.time?.map((item, index) => {
+          {item.time_dep?.split("|").map((item, index) => {
             return (
               <div key={index} className="!m-0 !p-0">
-                {item}
+                {item.trim()}
               </div>
             );
           })}

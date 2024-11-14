@@ -1,15 +1,15 @@
-import { Bus, ChevronRight } from "lucide-react";
+import { Bus, ChevronRight, MoveRight } from "lucide-react";
 import { ITransit } from "./transit.interface";
+import { ITrans } from "@/types/transit.interface";
+import { FC } from "react";
 
-export const TransitSectionItemItem = ({
-  i,
-  index,
-  item,
-}: {
+interface Iprops {
+  item: ITrans;
   i: string;
   index: number;
-  item: ITransit;
-}) => {
+}
+
+export const TransitSectionItemItem: FC<Iprops> = ({ i, index, item }) => {
   return (
     <>
       <span
@@ -21,11 +21,13 @@ export const TransitSectionItemItem = ({
             <b className="flex items-center gap-2 text-gray-700 font-semibold">
               <Bus size={20} className="text-gray-400 w-4 500:w-5" /> {i}
             </b>
-            {item.route.length <= 2 ? (
-              <span className="block ml-7 font-bold text-lg mb-2">...</span>
+            {item.route.split("|").length <= 2 ? (
+              <span className="block ml-7 font-bold text-lg mb-2">
+                <MoveRight />
+              </span>
             ) : null}
           </>
-        ) : index === item.route.length - 1 ? (
+        ) : index === item.route.split("|").length - 1 ? (
           <b className="items-center gap-2 ml-7 inline-block">{i}</b>
         ) : (
           <span className="flex items-center ml-6">
