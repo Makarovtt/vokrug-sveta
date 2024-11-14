@@ -1,10 +1,10 @@
 export interface ITour {
   date: string;
   id: string;
-  nights: string;
+  nights?: string;
   picture: string;
   price: string;
-  text: string;
+  text?: string;
   title: string;
 }
 

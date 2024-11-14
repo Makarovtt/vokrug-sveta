@@ -1,5 +1,4 @@
 import { Bus, ChevronRight, MoveRight } from "lucide-react";
-import { ITransit } from "./transit.interface";
 import { ITrans } from "@/types/transit.interface";
 import { FC } from "react";
 

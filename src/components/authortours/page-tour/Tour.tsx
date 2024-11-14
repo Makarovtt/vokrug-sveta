@@ -54,7 +54,9 @@ export const Tour: FC<IProps> = ({ pageInfo }) => {
         </div>
       </div>
       <div className="my-10">
-        <div dangerouslySetInnerHTML={{ __html: pageInfo.text }} />
+        {pageInfo.text && (
+          <div dangerouslySetInnerHTML={{ __html: pageInfo.text }} />
+        )}
       </div>
     </MainContainer>
   );

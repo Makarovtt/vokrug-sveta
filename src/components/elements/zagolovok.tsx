@@ -5,11 +5,15 @@ import { FC } from "react";
 
 interface Iprops {
   title: string;
-  className: string;
+  className?: string;
   tour?: boolean;
 }
 
-export const Zagolovok: FC<Iprops> = ({ title, className, tour = false }) => {
+export const Zagolovok: FC<Iprops> = ({
+  title,
+  className = "",
+  tour = false,
+}) => {
   return (
     <h1
       className={cn(
