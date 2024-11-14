@@ -7,7 +7,7 @@ import { Calendar as CalendarIcon } from "lucide-react";
 import { DateRange } from "react-day-picker";
 
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/Button";
+// import { Button } from "@/components/ui/Button";
 import { Calendar } from "@/components/ui/calendar";
 import {
   Popover,
@@ -32,7 +32,7 @@ export function SelectFormData({
     <div className={cn("grid gap-2", className)}>
       <Popover>
         <PopoverTrigger asChild>
-          <Button
+          {/* <Button
             id="date"
             variant={"outline"}
             className={cn(
@@ -57,7 +57,7 @@ export function SelectFormData({
             ) : (
               <span>Даты отъезда</span>
             )}
-          </Button>
+          </Button> */}
         </PopoverTrigger>
         <PopoverContent className="w-auto p-0" align="start">
           <Calendar
