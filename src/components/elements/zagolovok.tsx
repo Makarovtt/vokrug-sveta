@@ -7,12 +7,14 @@ interface Iprops {
   title: string;
   className?: string;
   tour?: boolean;
+  dopTitle?: string;
 }
 
 export const Zagolovok: FC<Iprops> = ({
   title,
   className = "",
   tour = false,
+  dopTitle = "",
 }) => {
   return (
     <h1
@@ -24,6 +26,7 @@ export const Zagolovok: FC<Iprops> = ({
       <Image src={ImgMarkerZagolovok} alt="" className="w-10" />
       {tour && <span className="text-default-500 text-2xl">Тур: </span>}
       <span className="hover:underline cursor-pointer">{title}</span>
+      {dopTitle && <span className="text-sky-500 text-2xl">— {dopTitle}</span>}
     </h1>
   );
 };

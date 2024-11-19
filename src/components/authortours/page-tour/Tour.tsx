@@ -1,3 +1,5 @@
+"use client";
+
 import { Zagolovok } from "@/components/elements/zagolovok";
 import { MainContainer } from "@/components/ui/MainContainer";
 import { convertPrice, textNights } from "@/lib/utils";
@@ -5,6 +7,7 @@ import { ITour } from "@/types/tours.interface";
 import { Calendar, SunMoon, Undo2 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { FC } from "react";
 
 interface IProps {
@@ -12,6 +15,7 @@ interface IProps {
 }
 
 export const Tour: FC<IProps> = ({ pageInfo }) => {
+  const router = useRouter();
   return (
     <MainContainer>
       <div className="flex gap-4 items-center justify-start">
@@ -19,9 +23,9 @@ export const Tour: FC<IProps> = ({ pageInfo }) => {
           className="w-10 h-10 bg-cyan-600 flex items-center justify-center rounded-full opacity-70
                         cursor-pointer hover:opacity-100 transition"
         >
-          <Link href="/authortours">
-            <Undo2 color="white" />
-          </Link>
+          {/* <Link href="/authortours"> */}
+          <Undo2 color="white" onClick={() => router.back()} />
+          {/* </Link> */}
         </div>
         <div className="flex items-center justify-start gap-5">
           <Zagolovok

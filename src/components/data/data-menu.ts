@@ -71,13 +71,13 @@ export const dataMenu = [
     sub: [
       // {
       //   id: 31,
-      //   title: "Кремль",
-      //   href: "/astrakhan/kreml",
+      //   title: "Выходного дня",
+      //   href: "tours/vyhodnogo_dnia",
       // },
       // {
       //   id: 32,
-      //   title: "озеро Баскунчак",
-      //   href: "/astrakhan/baskunchak",
+      //   title: "Праздничные",
+      //   href: "tours/prazdnichnye",
       // },
       // {
       //   id: 33,

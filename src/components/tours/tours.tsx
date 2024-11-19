@@ -5,6 +5,7 @@ import { TourItem } from "../authortours/tour-item";
 import { Button } from "@nextui-org/react";
 import useGetTours from "@/hooks/useGetTours";
 import { Loader } from "../ui/Loader";
+import Link from "next/link";
 
 export function Tours() {
   const dataTours = useGetTours();
@@ -21,7 +22,13 @@ export function Tours() {
         )}
       </div>
       <div className="flex justify-center py-5 my-10">
-        <Button color="primary" variant="ghost" className="text-base">
+        <Button
+          as={Link}
+          href="/authortours"
+          color="primary"
+          variant="ghost"
+          className="text-base"
+        >
           смотреть все
         </Button>
       </div>

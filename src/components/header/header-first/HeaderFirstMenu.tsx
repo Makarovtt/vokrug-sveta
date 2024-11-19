@@ -2,13 +2,30 @@ import { Menu, X } from "lucide-react";
 import { Button, useDisclosure } from "@nextui-org/react";
 import { useRouter } from "next/navigation";
 import { dataMenu } from "../../data/data-menu";
-import { IMenuSecondMenu } from "../header.interface";
+import { IGetTypeTour, IMenuSecondMenu, ITypeTour } from "../header.interface";
 import HeaderMobileMenu from "./HeaderMobileMenu";
 import HeaderMenuItem from "./HeaderMenuItem";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { API_URL } from "@/config/api.config";
+
+const url = `${API_URL}/get_type_tour.php`;
 
 export function HeaderFirstMenu() {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
+  const [dataSubMenu, setDataSubMenu] = useState<ITypeTour[]>([]);
   // const router = useRouter();
+
+  useEffect(() => {
+    axios
+      .get<IGetTypeTour>(url)
+      .then((res) => {
+        setDataSubMenu(res.data.type_tours);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
   return (
     <>
       <div className="1100:hidden flex justify-between gap-2">
@@ -27,6 +44,7 @@ export function HeaderFirstMenu() {
       >
         {dataMenu &&
           dataMenu?.map((itemMenu: IMenuSecondMenu | undefined) => {
+            if (itemMenu?.id === 3) itemMenu.sub = dataSubMenu;
             return <HeaderMenuItem key={itemMenu?.id} item={itemMenu} />;
           })}
       </div>

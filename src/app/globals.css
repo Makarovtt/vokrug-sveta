@@ -68,6 +68,10 @@
 [data-f-id] {
   display: none !important;
 }
+
+.s-partnership {
+  z-index: 50 !important;
+}
 .table_transit {
   display: grid;
   grid-template-columns: 1fr 5fr 5fr 5fr 5fr 2fr;

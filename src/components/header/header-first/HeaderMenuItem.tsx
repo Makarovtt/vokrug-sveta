@@ -1,16 +1,24 @@
 import { cn } from "@/lib/utils";
 import { Button } from "@nextui-org/react";
 import { ChevronDown } from "lucide-react";
-import { FC } from "react";
-import { IMenuSecondMenu, IMenuSecondSubMenu } from "../header.interface";
+import { FC, useState } from "react";
+import {
+  IGetTypeTour,
+  IMenuSecondMenu,
+  IMenuSecondSubMenu,
+  ITypeTour,
+} from "../header.interface";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import axios from "axios";
+import { API_URL } from "@/config/api.config";
 
 interface Iitem {
   item: IMenuSecondMenu | undefined;
 }
 const HeaderMenuItem: FC<Iitem> = ({ item }) => {
   const pathname = usePathname();
+
   function goToHref(href: any) {
     // const pathname = href;
     // window.location.pathname(pathname);
@@ -41,22 +49,26 @@ const HeaderMenuItem: FC<Iitem> = ({ item }) => {
       </Button>
       {item?.sub?.length ? (
         <div
-          className="absolute bg-white rounded-lg px-1 py-2 w-[300px] z-[70] hidden top-[110px]
+          className="absolute bg-white rounded-lg px-1 py-2 w-[300px] z-[70] hidden top-[60px]
 shadow-[0px_0px_4px_1px_rgba(0,0,0,0.16)]
 group-hover:block"
         >
-          {item.sub &&
-            item.sub.map((item: IMenuSecondSubMenu | undefined) => {
+          {item &&
+            item.sub?.map((item) => {
               return (
                 <Button
                   as={Link}
-                  href={item?.href}
+                  href={
+                    "slug" in item ? `/authortours/${item?.slug}` : item?.href
+                  }
                   key={item?.id}
                   className={cn(
                     "py-1 w-full text-left text-sm bg-white hover:bg-gray-100 justify-start",
-                    pathname === item?.href
-                      ? "text-cyan-700 font-semibold"
-                      : "",
+                    "slug" in item
+                      ? null
+                      : pathname === item?.href
+                        ? "text-cyan-700 font-semibold"
+                        : "",
                   )}
                 >
                   {item?.title}

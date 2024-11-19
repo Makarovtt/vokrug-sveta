@@ -6,6 +6,7 @@ export interface ITour {
   price: string;
   text?: string;
   title: string;
+  type_tour: string;
 }
 
 export interface IGetTours {

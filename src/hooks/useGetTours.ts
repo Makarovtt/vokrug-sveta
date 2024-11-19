@@ -22,6 +22,8 @@ const useGetTours = () => {
     getData();
   }, []);
 
+  orders.splice(6);
+
   return orders;
 };
 
